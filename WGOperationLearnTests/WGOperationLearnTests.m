@@ -27,6 +27,14 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    NSArray *array1 = @[@1];
+    
+    NSArray *array2 = @[@1];
+    
+    NSArray *array3 = array1;
+    
+    XCTAssertEqual(array1, array3);
 }
 
 - (void)testPerformanceExample {

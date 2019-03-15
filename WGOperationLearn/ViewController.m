@@ -24,7 +24,27 @@
     self.title = @"ViewController";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self unsafeQueue];
+//    [self unsafeQueue];
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    [self doSomething];
+
+}
+
+-(void)doSomething{
+    void (^block)();
+    if([self.title isEqualToString:@"ViewController"]){
+        block = ^{
+            NSLog(@"Block A");
+        };
+    }else{
+        block = ^{
+            NSLog(@"Block B");
+        };
+    }
+    block();
 }
 
 - (NSLock *)lock{
